@@ -1,0 +1,62 @@
+
+  <div class="container">
+
+  <h1 class="song-title-big"><%= @track.song_title %><img class="sml_logo" src="../logo.png"></h1>
+
+  <p class="artist">By: <%= @track.artist %></p>
+
+  <p class="video_player"><%= (@track.youtube_embed(@track.url)) %></p>
+  <form class="comments" role="form" method="post" action="/track/<%= @track.id %>/comments">
+    <% if current_user %> 
+      <input class="text-box" name="comment_body" placeholder=" What do you want to say?" type="text"></input>
+      <input class="button submit" type='submit'>
+    <% else %> 
+      <a href="/login">You must <strong>login</strong> to comment</a></li>
+    <% end %>
+  </form>
+    <% @comments.each do |comment| %>
+
+    <p class="comment_says"><%= comment.user.username %> says:</p> 
+    <div class="wrapper">
+      <%= comment.comment_body %><br>
+    </div>
+    
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <form id="ratingsForm">
+  <div class="stars">
+    <input type="radio" name="star" class="star-1" id="star-1" />
+    <label class="star-1" for="star-1">1</label>
+    <input type="radio" name="star" class="star-2" id="star-2" />
+    <label class="star-2" for="star-2">2</label>
+    <input type="radio" name="star" class="star-3" id="star-3" />
+    <label class="star-3" for="star-3">3</label>
+    <input type="radio" name="star" class="star-4" id="star-4" />
+    <label class="star-4" for="star-4">4</label>
+    <input type="radio" name="star" class="star-5" id="star-5" />
+    <label class="star-5" for="star-5">5</label>
+    <span></span>
+  </div>
+  <div id="submit"><input type="button" value="Rate It"></input></div>
+</form>  -->

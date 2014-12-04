@@ -1,0 +1,20 @@
+
+
+<div class="grid-container">
+  <div class="row">
+<% @tracks.each do |track| %>
+    <div class="col-md-3">
+      <h3 class="song_title_padding"><a class="song_title" href="/tracks/<%= track.id %>">'<%= track.song_title %>'</a></h3> 
+      <h4 class="artist_name"><%= track.artist %></h4>
+       <p class="user_name">by: <%= track.author %></p>
+        <form action="/tracks/<%= track.id %>/upvotes" method="post">
+      <input class="upvote_button" type='submit' value='Up!'><p class="counter_font">(<%= track.upvotes || 0%>)</p>
+        </form>
+    </div>
+  
+<% end %>
+  </div>
+</div>
+
+
+

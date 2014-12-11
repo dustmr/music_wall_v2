@@ -11,14 +11,15 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 gem 'seed_dump'
+gem 'pg'
 
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   gem 'pg'
+# end
 
-group :development, :test do
-  gem 'pry'
-  gem 'shotgun'
-  gem 'sqlite3'
+# group :development, :test do
+#   gem 'pry'
+#   gem 'shotgun'
+#   gem 'sqlite3'
 
-end
+# end
